@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acerca de</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/styles.css" rel="stylesheet">
+  <style>
+    .about-container {
+      max-width: 800px;
+      margin: 2rem auto;
+    }
+    .about-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .about-section {
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Incluir el Navbar -->
+  <%- include('./partials/navbar') %>
+
+  <div class="container about-container">
+    <div class="about-header">
+      <h2>Acerca de Nuestra Aplicación</h2>
+      <p class="text-muted">Conoce más sobre nuestra plataforma y su propósito.</p>
+    </div>
+
+    <!-- Descripción de la Aplicación -->
+    <div class="about-section">
+      <h4>Descripción</h4>
+      <p>
+        Esta aplicación está diseñada para facilitar la gestión de usuarios dentro de una organización. Permite 
+        realizar tareas de registro, edición y eliminación de usuarios, con roles específicos para controlar el acceso a funciones
+        administrativas.
+      </p>
+    </div>
+
+    <!-- Funcionalidades -->
+    <div class="about-section">
+      <h4>Funcionalidades Principales</h4>
+      <ul>
+        <li>Registro y autenticación de usuarios.</li>
+        <li>Perfiles personalizados para cada usuario.</li>
+        <li>Roles de usuario (administrador y usuario) para gestionar permisos.</li>
+        <li>Edición y eliminación de usuarios solo para administradores.</li>
+        <li>Búsqueda de usuarios y filtrado por nombre o email.</li>
+      </ul>
+    </div>
+
+    <!-- Tecnologías Utilizadas -->
+    <div class="about-section">
+      <h4>Tecnologías Utilizadas</h4>
+      <ul>
+        <li>Backend: <strong>Node.js</strong> y <strong>Express</strong>.</li>
+        <li>Base de datos: <strong>MongoDB</strong> para almacenamiento de datos.</li>
+        <li>Autenticación: <strong>Passport.js</strong> para la gestión de sesiones y seguridad.</li>
+        <li>Frontend: <strong>Bootstrap</strong> para una interfaz de usuario receptiva.</li>
+      </ul>
+    </div>
+
+    <!-- Equipo de Desarrollo -->
+    <div class="about-section">
+      <h4>Equipo de Desarrollo</h4>
+      <p>Este proyecto fue desarrollado por el equipo:</p>
+      <ul>
+        <li>Manuel Morfin - Desarrollador Backend</li>
+        <li>Yuliana Rodriguez - Desarrolladora Frontend</li>
+        <li>Ulises Lua - Diseñador de Interfaz de Usuario</li>
+      </ul>
+    </div>
+
+    <!-- Contacto -->
+    <div class="about-section">
+      <h4>Contacto</h4>
+      <p>Si tienes preguntas o sugerencias, no dudes en <a href="/contact">contactarnos</a>.</p>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS y dependencias -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

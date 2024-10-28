@@ -1,0 +1,85 @@
+<!-- Modal de Registro -->
+<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="registerModalLabel">Registrar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Mostrar mensaje de error si existe -->
+        <% if (Array.isArray(error_msg) && error_msg.length > 0) { %>
+          <div class="alert alert-danger">
+            <% error_msg.forEach(function(msg) { %>
+              <p><%= msg %></p>
+            <% }) %>
+          </div>
+        <% } %>
+        <form action="/auth/register" method="POST">
+          <!-- Número de Control -->
+          <div class="form-group">
+            <label for="registerControlNumber">Número de Control</label>
+            <input type="text" class="form-control" id="registerControlNumber" name="controlNumber" required>
+          </div>
+
+          <!-- Fecha de Nacimiento -->
+          <div class="form-group">
+            <label for="registerBirthDate">Fecha de Nacimiento</label>
+            <input type="date" class="form-control" id="registerBirthDate" name="birthDate" required>
+          </div>
+
+          <!-- Sexo -->
+          <div class="form-group">
+            <label for="registerSex">Sexo</label>
+            <select class="form-control" id="registerSex" name="sex" required>
+              <option value="" disabled selected>Seleccione</option>
+              <option value="M">Masculino</option>
+              <option value="F">Femenino</option>
+              <option value="O">Otro</option>
+            </select>
+          </div>
+
+          <!-- Rol -->
+          <div class="form-group">
+            <label for="registerRole">Rol</label>
+            <select class="form-control" id="registerRole" name="role" required>
+              <option value="" disabled selected>Seleccione el rol</option>
+              <option value="admin">Administrador</option>
+              <option value="user">Usuario</option>
+            </select>
+          </div>
+
+          <!-- Campos Existentes -->
+          <div class="form-group">
+            <label for="registerName">Nombre</label>
+            <input type="text" class="form-control" id="registerName" name="name" value="<%= typeof name !== 'undefined' ? name : '' %>" required>
+          </div>
+          <div class="form-group">
+            <label for="registerEmail">Correo Electrónico</label>
+            <input type="email" class="form-control" id="registerEmail" name="email" value="<%= typeof email !== 'undefined' ? email : '' %>" required>
+          </div>
+          <div class="form-group">
+            <label for="registerPassword">Contraseña</label>
+            <input type="password" class="form-control" id="registerPassword" name="password" required>
+          </div>
+          <div class="form-group">
+            <label for="registerPassword2">Confirmar Contraseña</label>
+            <input type="password" class="form-control" id="registerPassword2" name="password2" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Registrar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Script para mostrar el modal de registro si hay un error -->
+<% if (Array.isArray(error_msg) && error_msg.length > 0) { %>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      $('#registerModal').modal('show');
+    });
+  </script>
+<% } %>
